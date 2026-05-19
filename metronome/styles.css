@@ -1,0 +1,19 @@
+.timesig input {
+    width: 40px;
+}
+#beatNum {
+    position: relative;
+    padding-left: 60%;
+    font-weight: bold;
+}
+.main {
+    width: 250px;
+    border-style: double;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.main p {
+    margin-block: 10px;
+}

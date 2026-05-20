@@ -2,18 +2,20 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <title>Web Universal Metronome</title>
+        
     </head>
     <body>
         <div class="main">
             <div class="controls">
-                <p><span><button id="pauseButton">Play</button></span><span id="beatNum"></span></p>
+                <p><button id="pauseButton">Play</button><p id="beatNum"></p></p>
             </div>
             <div class="bpm">
                 <label for="bpmInput">BPM: </label>
                 <input type="number" id="bpmInput" value="120" min="1" required></input>
             </div>
             <div class="timesig">
-                <p>Time Signature: <input class="numberInput" type="number" id="numeratorInput" value="7" min="1" required></input> / <input class="numberInput" type="number" id="denominatorInput" value="8" min="1" required></input></p>
+                <p><label for="numeratorInput">Time Signature: </label><input class="numberInput" type="number" id="numeratorInput" value="7" min="1" required></input> / <input class="numberInput" type="number" id="denominatorInput" value="8" min="1" required></input></p>
             </div>
         </div>
         <script src="metronome.js"></script>

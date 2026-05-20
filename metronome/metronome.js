@@ -34,7 +34,6 @@ pausePlay.addEventListener("click", async () => {
         targetTime = 0;
 
         while (prevPlayCount == playCount) {
-            console.log(timeSinceStart);
             timeSinceStart = Date.now() - startTime;
             if (timeSinceStart > targetTime) {
                 beatTime = Math.min(1, numerator - beat);

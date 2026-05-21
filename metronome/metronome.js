@@ -15,14 +15,17 @@ let bpm = 120;
 let startTime;
 let timeSinceStart;
 let targetTime;
+let lastOsc;
 
 function beep(freq) {
     const osc = audioCtx.createOscillator();
     osc.connect(audioCtx.destination);
     osc.type = "triangle";
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    if (lastOsc !== undefined) lastOsc.stop();
     osc.start();
-    osc.stop(audioCtx.currentTime + Math.min(0.1, sleepTime/1000));
+    osc.stop(audioCtx.currentTime + 0.1);
+    lastOsc = osc;
 }
 
 pausePlay.addEventListener("click", async () => {
@@ -32,7 +35,6 @@ pausePlay.addEventListener("click", async () => {
         const prevPlayCount = playCount;
         startTime = Date.now();
         targetTime = 0;
-
         while (prevPlayCount == playCount) {
             timeSinceStart = Date.now() - startTime;
             if (timeSinceStart > targetTime) {
@@ -62,6 +64,7 @@ bpmInput.addEventListener("input", () => {
 numeratorInput.addEventListener("input", () => {
     if (numeratorInput.value <= 0) return;
     numerator = numeratorInput.value;
+    if (numerator < beat) beat = 0;
 });
 
 denominatorInput.addEventListener("input", () => {

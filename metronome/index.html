@@ -15,10 +15,10 @@
             </div>
             <div class="bpm">
                 <label for="bpmInput">BPM: </label>
-                <input type="number" id="bpmInput" value="120" min="1" required></input>
+                <input type="number" id="bpmInput" value="120" min="1" required step="any"></input>
             </div>
             <div class="timesig">
-                <p><label for="numeratorInput">Time Signature: </label><input class="numberInput" type="number" id="numeratorInput" value="7" min="1" required></input> / <input class="numberInput" type="number" id="denominatorInput" value="8" min="1" required></input></p>
+                <p><label for="numeratorInput">Time Signature: </label><input class="numberInput" type="number" id="numeratorInput" value="7" min="1" required step="any"></input><label for="denominatorInput"> / </label><input class="numberInput" type="number" id="denominatorInput" value="8" min="1" required step="any"></input></p>
             </div>
         </div>
         <script src="metronome.js"></script>

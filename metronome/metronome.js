@@ -5,6 +5,8 @@ const beatDisplay = document.getElementById("beatNum");
 const bpmInput = document.getElementById("bpmInput");
 const numeratorInput = document.getElementById("numeratorInput");
 const denominatorInput = document.getElementById("denominatorInput");
+const volumeInput = document.getElementById("gain");
+const volumeDisplay = document.getElementById("gainDisplay");
 let playCount = 0;
 let beat = 0;
 let beatTime = 0;
@@ -19,7 +21,10 @@ let lastOsc;
 
 function beep(freq) {
     const osc = audioCtx.createOscillator();
-    osc.connect(audioCtx.destination);
+    const gain = audioCtx.createGain();
+    gain.gain.value = volumeInput.value;
+    osc.connect(gain);
+    gain.connect(audioCtx.destination)
     osc.type = "triangle";
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
     if (lastOsc !== undefined) lastOsc.stop();
@@ -71,3 +76,7 @@ denominatorInput.addEventListener("input", () => {
     if (denominatorInput.value <= 0) return;
     denominator = denominatorInput.value;
 });
+
+volumeInput.addEventListener("input", () => {
+    volumeDisplay.innerText = " " + Math.round(volumeInput.value * 100) + "%";
+})

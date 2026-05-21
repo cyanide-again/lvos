@@ -26,3 +26,9 @@
 .bpm input {
     width: 165px;
 }
+.timesig {
+    margin-bottom: 10px;
+}
+.volumeControl input {
+    width: 110px;
+}

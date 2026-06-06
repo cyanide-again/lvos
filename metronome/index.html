@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
         <title>Web Universal Metronome</title>
         
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../../../Styles/general.css">
     </head>
     <body>
-        <div class="main">
+        <main>
             <div class="controls">
                 <p>
                     <button id="pauseButton">Play</button>
@@ -24,7 +25,7 @@
             <label for="gain">Volume: </label><input id="gain" type="range" min="0" max="1" step="0.01" value="1"><label for="gain" id="gainDisplay"> 100%</label>
                 
             </div>
-        </div>
+        </main>
         <script src="metronome.js"></script>
     </body>
 </html>

@@ -1,0 +1,23 @@
+body {
+    margin: 20px;
+}
+#inputImg, #outputImg {
+    padding-block: 30px;
+    display: none;
+}
+.imageOptions {
+    margin-block: 30px;
+    display: none;
+}
+.output {
+    display: flex;
+}
+.output img {
+    margin-right: 40px;
+}
+.settings {
+    display: none;
+}
+.settings input {
+    margin-right: 40px;
+}

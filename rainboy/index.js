@@ -115,3 +115,7 @@ submitButton.addEventListener("click", async function gay() {
     downloadButon.href = imgUrl;
     downloadButon.download = fileName + "_gay.png";
 });
+
+Array.from(document.getElementsByTagName("input")).forEach(function (input) {
+    input.addEventListener("change", gay);
+});

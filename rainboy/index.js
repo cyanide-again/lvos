@@ -80,7 +80,7 @@ function getArrayFromImage() {
     return ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
-submitButton.addEventListener("click", async function gay() {
+submitButton.addEventListener("click", function gay() {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = image.width;

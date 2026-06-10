@@ -119,5 +119,6 @@ function gay() {
 submitButton.addEventListener("click", gay);
 
 Array.from(document.getElementsByTagName("input")).forEach(function (input) {
+    input.addEventListener("input", gay);
     input.addEventListener("change", gay);
 });

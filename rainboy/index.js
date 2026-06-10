@@ -80,7 +80,7 @@ function getArrayFromImage() {
     return ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
-submitButton.addEventListener("click", function gay() {
+function gay() {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = image.width;
@@ -114,7 +114,9 @@ submitButton.addEventListener("click", function gay() {
     outputImg.src = imgUrl;
     downloadButon.href = imgUrl;
     downloadButon.download = fileName + "_gay.png";
-});
+}
+
+submitButton.addEventListener("click", gay);
 
 Array.from(document.getElementsByTagName("input")).forEach(function (input) {
     input.addEventListener("change", gay);
